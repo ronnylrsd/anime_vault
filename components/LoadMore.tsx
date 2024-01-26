@@ -14,14 +14,10 @@ function LoadMore() {
 
   useEffect(() => {
     if (inView) {
-      fetchAnime(page)
-        .then((res) => {
-          setData([...data, ...res]);
-          page++;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      fetchAnime(page).then((res) => {
+        setData([...data, ...res]);
+        page++;
+      });
     }
   }, [inView, data]);
 
